@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Galerie photos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row *ngFor="let photo of photos">
+      <ion-item>
+        <ion-col>
+            <ion-img [src]="'/assets/img/galerie/' + photo.img" (ionError)="photo.img = 'ph.jpg'"></ion-img>
+        </ion-col>
+      </ion-item>
+      <ion-item >
+        <ion-label>{{photo.titre}}</ion-label>
+      </ion-item>
+    </ion-row>
+      
+  </ion-grid>
+</ion-content>
