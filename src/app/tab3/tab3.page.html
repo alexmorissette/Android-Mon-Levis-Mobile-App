@@ -7,5 +7,22 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
+<ion-list *ngIf="0 < lieux.length; else listeVide">
+  <ion-item *ngFor="let lieu of lieux">
+    
+    <ion-card button="true">
+      <ion-img [src]="'/assets/img/lieux/' + lieu.img" ionError="lieu.img = 'ph.jpg'"></ion-img>
+      <ion-card-header>
+        <ion-card-subtitle>RECOMMANDATION</ion-card-subtitle>
+        <ion-card-title>{{lieu.titre}}</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        {{lieu.description}}
+      </ion-card-content>
+        <ion-button fill="outline">Voir sur la Google Maps</ion-button>
+    </ion-card>
+  </ion-item>
+</ion-list>
+<ng-template #listeVide>Pas de lieux...</ng-template>
 </ion-content>
