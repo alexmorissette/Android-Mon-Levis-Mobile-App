@@ -14,10 +14,22 @@
             <ion-img [src]="'/assets/img/galerie/' + photo.img" (ionError)="photo.img = 'ph.jpg'"></ion-img>
         </ion-col>
       </ion-item>
-      <ion-item >
-        <ion-label>{{photo.titre}}</ion-label>
+      <ion-item class="center">
+        <ion-label color="secondary">{{photo.titre}}</ion-label>
       </ion-item>
     </ion-row>
-      
   </ion-grid>
+
+  <ion-fab vertical="top" horizontal="left" slot="fixed">
+    <ion-fab-button size="small">+</ion-fab-button>
+    <ion-fab-list side="end">
+      <ion-fab-button>
+        <ion-icon name="camera"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+        <ion-icon name="image"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
 </ion-content>
