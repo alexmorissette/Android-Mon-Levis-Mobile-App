@@ -8,6 +8,8 @@ import { PHOTOS } from 'src/assets/data/photos';
 })
 export class Tab4Page {
   public photos = PHOTOS;
+  //public imgWidth: number = 6;
+
   constructor() {}
 
 }

@@ -11,11 +11,11 @@
     <ion-row *ngFor="let photo of photos">
       <ion-item>
         <ion-col>
-            <ion-img [src]="'/assets/img/galerie/' + photo.img" (ionError)="photo.img = 'ph.jpg'"></ion-img>
+          <ion-img [src]="'/assets/img/galerie/' + photo.img" (ionError)="photo.img = 'ph.jpg'"></ion-img>
+          <ion-item class="center">
+            <ion-label color="secondary">{{photo.titre}}</ion-label>
+          </ion-item>
         </ion-col>
-      </ion-item>
-      <ion-item class="center">
-        <ion-label color="secondary">{{photo.titre}}</ion-label>
       </ion-item>
     </ion-row>
   </ion-grid>

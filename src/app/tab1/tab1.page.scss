@@ -1,3 +1,11 @@
 ion-content.background{
     --background: url(/assets/img/vue-sur-levis.jpg) no-repeat right center / cover;
 }
+.center{
+    text-align: center;
+    width: 100%;
+}
+
+.ion-margin{
+    margin: 5vh 15% 0 15%;
+}
