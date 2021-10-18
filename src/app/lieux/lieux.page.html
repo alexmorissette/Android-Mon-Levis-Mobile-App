@@ -1,0 +1,87 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Lieux à visiter
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form #formData="ngForm" (ngSubmit)="onSubmit(formData)">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-input 
+            ngModel
+            name="urlLieu"
+            type="url"
+            placeholder="Lien du lieu à visiter"
+            #urlLieu="ngModel"
+            url
+            #pattern = "ngModel"
+            pattern = "(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?"   
+            required
+            style="text-align: center; font-style: italic;"
+            inputmode="url">
+          </ion-input>
+          <!--********************** VALIDATION ERREUR *********************-->
+          <div id="errors" *ngIf="!formData.valid && (formData.dirty || formData.touched)">
+            <ion-note *ngIf="urlLieu.errors?.required;" style="color: red;">
+              <ion-icon name="warning"></ion-icon>
+              Url requis
+            </ion-note>
+            <ion-note *ngIf="urlLieu.errors?.pattern;" style="color: red;">
+              <ion-icon name="warning"></ion-icon>
+              Url invalide
+            </ion-note>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <!-- <a [routerLink]="['lieux', formData.value.urlLieu]"> -->
+            <ion-button type="submit" expand="block">Ajouter le lieu à la liste</ion-button>
+          <!-- </a> -->
+        </ion-col>
+      </ion-row>
+      <!-- <ion-row>{{urlLieu}}</ion-row> -->
+    </ion-grid>
+  </form>
+
+
+  <!-- <ion-list id="errors" *ngIf="!formData.valid && (formData.dirty || formData.touched)">
+    <ion-header>Erreur</ion-header>
+    <ion-item *ngIf="urlLieu.errors?.required">
+      URL requis
+    </ion-item>
+    <ion-item *ngIf="urlLieu.errors?.pattern">
+      L'URL n'est pas valide
+    </ion-item>
+  </ion-list> -->
+
+  <ion-list *ngIf="0 < lieux.length; else listeVide">
+    <ion-item *ngFor="let lieu of lieux">
+      <ion-card button="true">
+        <ion-img [src]="'/assets/img/lieux/' + lieu.img" (ionError)="lieu.img = 'ph.jpg'"></ion-img>
+        <ion-card-header>
+          <ion-card-subtitle>RECOMMANDATION</ion-card-subtitle>
+          <ion-card-title>{{lieu.titre}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          {{lieu.description}}
+        </ion-card-content>
+        <ion-item>
+          <ion-button class="center" fill="outline">Voir sur la carte</ion-button>
+        </ion-item>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+  <ng-template #listeVide>Pas de lieu...</ng-template>
+  <!-- 
+  <ion-fab vertical="top" horizontal="left" slot="fixed">
+    <ion-fab-button [routerLink]="ajouterLieu()" size="small">+</ion-fab-button>
+  </ion-fab> -->
+  
+  </ion-content>
+
+

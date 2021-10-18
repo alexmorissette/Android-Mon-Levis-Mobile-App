@@ -1,0 +1,13 @@
+/* Coolors Exported Palette - https://coolors.co/20bf55-0b4f6c-01baef-fbfbff-757575 */
+
+/* CSV */
+20bf55,0b4f6c,01baef,fbfbff,757575
+
+/* Array */
+["20bf55","0b4f6c","01baef","fbfbff","757575"]
+
+/* Object */
+{"Dark Pastel Green":"20bf55","Blue Sapphire":"0b4f6c","Cyan Process":"01baef","Ghost White":"fbfbff","Sonic Silver":"757575"}
+
+/* Extended Array */
+[{"name":"Dark Pastel Green","hex":"20bf55","rgb":[32,191,85],"cmyk":[83,0,55,25],"hsb":[140,83,75],"hsl":[140,71,44],"lab":[68,-61,42]},{"name":"Blue Sapphire","hex":"0b4f6c","rgb":[11,79,108],"cmyk":[90,27,0,58],"hsb":[198,90,42],"hsl":[198,82,23],"lab":[31,-9,-22]},{"name":"Cyan Process","hex":"01baef","rgb":[1,186,239],"cmyk":[100,22,0,6],"hsb":[193,100,94],"hsl":[193,99,47],"lab":[70,-21,-37]},{"name":"Ghost White","hex":"fbfbff","rgb":[251,251,255],"cmyk":[2,2,0,0],"hsb":[240,2,100],"hsl":[240,100,99],"lab":[99,1,-2]},{"name":"Sonic Silver","hex":"757575","rgb":[117,117,117],"cmyk":[0,0,0,54],"hsb":[0,0,46],"hsl":[0,0,46],"lab":[49,0,0]}]

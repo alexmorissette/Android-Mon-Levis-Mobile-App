@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Mon Lévis
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="background" [fullscreen]="true">
+  <!-- <ion-text class="center" color="warning">
+    <h1>Bienvenue dans l'application Mon Lévis !</h1>
+  </ion-text> -->
+  <a routerLink='../carte'>
+    <ion-button expand="block" color="primary" class="ion-margin">Carte de Lévis</ion-button>
+  </a>
+  <a routerLink='../lieux'>
+    <ion-button expand="block" color="primary" class="ion-margin">Lieux à visiter</ion-button>
+  </a>
+  <a routerLink='../galerie'>
+    <ion-button expand="block" color="primary" class="ion-margin">Galerie photos</ion-button>
+  </a>
+</ion-content>

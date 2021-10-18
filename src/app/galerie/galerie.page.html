@@ -8,15 +8,16 @@
 
 <ion-content [fullscreen]="true">
   <ion-grid>
-    <ion-row *ngFor="let photo of photos">
-      <ion-item>
-        <ion-col>
+    <ion-row>
+        <ion-col *ngFor="let photo of photos"
+        sizeXs="12" 
+        sizeSm="6" 
+        size="4" 
+        sizeMd="4" 
+        sizeLg="3" 
+        sizeXl="2">
           <ion-img [src]="'/assets/img/galerie/' + photo.img" (ionError)="photo.img = 'ph.jpg'"></ion-img>
-          <ion-item class="center">
-            <ion-label color="secondary">{{photo.titre}}</ion-label>
-          </ion-item>
         </ion-col>
-      </ion-item>
     </ion-row>
   </ion-grid>
 
