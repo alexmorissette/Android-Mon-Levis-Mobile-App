@@ -17,13 +17,14 @@
             type="url"
             placeholder="Lien du lieu à visiter"
             #urlLieu="ngModel"
-            url
+            urlLieu
             #pattern = "ngModel"
-            pattern = "(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?"   
+            pattern = '(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?'
             required
             style="text-align: center; font-style: italic;"
             inputmode="url">
           </ion-input>
+        
           <!--********************** VALIDATION ERREUR *********************-->
           <div id="errors" *ngIf="!formData.valid && (formData.dirty || formData.touched)">
             <ion-note *ngIf="urlLieu.errors?.required;" style="color: red;">
@@ -35,29 +36,16 @@
               Url invalide
             </ion-note>
           </div>
+
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
-          <!-- <a [routerLink]="['lieux', formData.value.urlLieu]"> -->
             <ion-button type="submit" expand="block">Ajouter le lieu à la liste</ion-button>
-          <!-- </a> -->
         </ion-col>
       </ion-row>
-      <!-- <ion-row>{{urlLieu}}</ion-row> -->
     </ion-grid>
   </form>
-
-
-  <!-- <ion-list id="errors" *ngIf="!formData.valid && (formData.dirty || formData.touched)">
-    <ion-header>Erreur</ion-header>
-    <ion-item *ngIf="urlLieu.errors?.required">
-      URL requis
-    </ion-item>
-    <ion-item *ngIf="urlLieu.errors?.pattern">
-      L'URL n'est pas valide
-    </ion-item>
-  </ion-list> -->
 
   <ion-list *ngIf="0 < lieux.length; else listeVide">
     <ion-item *ngFor="let lieu of lieux">
@@ -77,11 +65,6 @@
     </ion-item>
   </ion-list>
   <ng-template #listeVide>Pas de lieu...</ng-template>
-  <!-- 
-  <ion-fab vertical="top" horizontal="left" slot="fixed">
-    <ion-fab-button [routerLink]="ajouterLieu()" size="small">+</ion-fab-button>
-  </ion-fab> -->
-  
-  </ion-content>
+</ion-content>
 
 

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Mon Lévis</string>
+    <string name="title_activity_main">Mon Lévis</string>
+    <string name="package_name">ca.amw.monlevis</string>
+    <string name="custom_url_scheme">ca.amw.monlevis</string>
+</resources>

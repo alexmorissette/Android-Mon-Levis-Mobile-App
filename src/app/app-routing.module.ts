@@ -14,6 +14,10 @@ const routes: Routes = [
     path: 'lieux/:urlLieu',
     loadChildren: () => import('./lieux/lieux.module').then(m => m.LieuxPageModule)
   },
+  {
+    path: '**',
+    loadChildren: () => import('./erreur404/erreur404.module').then( m => m.Erreur404PageModule)
+  },
 ];
 @NgModule({
   imports: [
