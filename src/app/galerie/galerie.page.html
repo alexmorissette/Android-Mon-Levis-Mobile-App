@@ -9,22 +9,25 @@
 <ion-content [fullscreen]="true">
   <ion-grid>
     <ion-row>
+      <ion-col size="6" *ngFor="let photo of photoService.photos">
+        <div><ion-img [src]="photo.webviewPath"></ion-img></div>
+        <div>Nom: {{photo.filePath}}</div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
         <ion-col size="6" *ngFor="let photo of photos">
           <ion-img [src]="'/assets/img/galerie/' + photo.img" (ionError)="photo.img = 'ph.jpg'"></ion-img>
         </ion-col>
     </ion-row>
   </ion-grid>
 
-  <ion-fab vertical="top" horizontal="left" slot="fixed">
-    <ion-fab-button size="small">+</ion-fab-button>
-    <ion-fab-list side="end">
-      <ion-fab-button>
+  <ion-fab vertical="bottom" horizontal="right" slot="fixed">
+      <ion-fab-button (click)="photoService.newImgToGallery()">
         <ion-icon name="camera"></ion-icon>
       </ion-fab-button>
-      <ion-fab-button>
-        <ion-icon name="image"></ion-icon>
-      </ion-fab-button>
-    </ion-fab-list>
   </ion-fab>
 
 </ion-content>

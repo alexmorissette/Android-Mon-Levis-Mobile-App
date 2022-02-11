@@ -15,9 +15,17 @@ const routes: Routes = [
     loadChildren: () => import('./lieux/lieux.module').then(m => m.LieuxPageModule)
   },
   {
+    path: 'carte',
+    loadChildren: () => import('./carte/carte.module').then(m => m.CartePageModule)
+  },
+  {
+    path: 'carte/:lat/:lng/:titre',
+    loadChildren: () => import('./carte/carte.module').then(m => m.CartePageModule)
+  },
+  {
     path: '**',
     loadChildren: () => import('./erreur404/erreur404.module').then( m => m.Erreur404PageModule)
-  },
+  }
 ];
 @NgModule({
   imports: [

@@ -1,7 +1,11 @@
 export interface Lieu {
-    id: number;
+    id: string;
     img: string;
     titre: string;
     description: string;
     map: string;
+    coords: {
+        lat: number;
+        lng: number;
+    }
 }
